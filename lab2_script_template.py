@@ -13,55 +13,55 @@ def main():
         [
             
             {
-             'title': 'my hero accadima two heros', 
-             'genra': 'Supernaturall'
+                'title': 'my hero accadima two heros', 
+                'genre': 'Supernaturall'
             },
-                        {
+            {
                 'title': 'war of tomarrow',
-                'genra': 'Acctsion'
+                'genre': 'Acctsion'
             }
         ]
     }
 
     # TODO: Step 3 - Add another movie to the data structure
-    about_me['Movies'].insert(1, 'harry potter')
-    print_about_me(Moive_extra)
+    about_me['Movies'].insert(1, {'title' : 'love is war','genra' : 'Romace'})
+    print_student_name_and_id(about_me)
+    add_pizza_toppings(about_me, ('SAUSE', 'HAM'))
+    print_pizza_toppings(about_me)
+    print_movie_genres(about_me)
+    print_movie_titles(about_me)
 
 # TODO: Step 4 - Function that prints student name and ID	
-def print_student_name_and_id(about_me):
-    print(f" My name is {about_me['Full_Name'].title()} but you can call me Sir {about_me['Frist_Name'].title()} My student ID is {about_me['Student_ID']}")
-    return
+def print_student_name_and_id(me):
+    print(f" My name is {me['Full_Name'].title()} but you can call me Sir {me['Frist_Name'].title()} My student ID is {me['Student_ID']}")
     
 # TODO: Step 5 - Function that adds pizza toppings to data structure
-def add_pizza_toppings(about_me, toppings):
+def add_pizza_toppings(me, toppings):
     toppings = 'SAUSE', 'HAM'
-    about_me['Pizza_Toppings'].extend(toppings)
-    for i,p in enumerate(about_me['Pizza_Toppings']):
-        about_me['Pizza_Toppings'][i] = p.lower()
-    about_me['Pizza_Toppings'].sort()
-    return
+    me['Pizza_Toppings'].extend(toppings)
+    for i,p in enumerate(me['Pizza_Toppings']):
+        me['Pizza_Toppings'][i] = p.lower()
+    me['Pizza_Toppings'].sort()
 
 # TODO: Step 6 - Function that prints bullet list of pizza toppings
-def print_pizza_toppings(about_me):
-    print('\nThe player list is:')
-    for b in about_me['Pizza_Toppings']:
+def print_pizza_toppings(me):
+    print('\nThe Pizza Toppings list is:')
+    for b in me['Pizza_Toppings']:
         print(f'- {b}')
-    return
 
 # TODO: Step 7 - Function that prints comma-separated list of movie genres
-def print_movie_genres(about_me):
+def print_movie_genres(me):
     print('\nThe Movie genre list is:')
-    for i,m in enumerate(about_me['Movies']):
-        if i < len(about_me['Movies']) - 1:
-            print(f'- {m["my hero accadima two heros"]}', end='')
-    else:
-        print(f'- {m["my hero accadima two heros"]}')
-    return 
+    Movie_genre = [g["Movies"].upper() for g in me["genre"]]
+    Movie_genres = ', '.join(Movie_genre)
+    print(Movie_genres)
 
 # TODO: Step 8 - Function that prints comma-separated list of movie titles
-def print_movie_titles(movie_list):
-    
-    return
+def print_movie_titles(me):
+    print('\nThe Movie genre list is:')
+    Movie_genre = [g["Movies"].upper() for g in me["genre"]]
+    Movie_genres = ', '.join(Movie_genre)
+    print(Movie_genres)
     
 if __name__ == '__main__':
     main()
